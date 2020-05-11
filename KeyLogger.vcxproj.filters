@@ -26,5 +26,8 @@
     <ClInclude Include="Includes\KeyLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Includes\Base64Encoder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

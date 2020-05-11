@@ -1,6 +1,7 @@
 #include <iostream>
 #include "KeyLogger.h"
 #include "Constants.h"
+#include "Base64Encoder.h"
 #include <TlHelp32.h>
 using namespace std;
 
