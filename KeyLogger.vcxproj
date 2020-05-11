@@ -23,6 +23,7 @@
     <ClInclude Include="Includes\Constants.h" />
     <ClInclude Include="Includes\Input_Output.h" />
     <ClInclude Include="Includes\KeyLogger.h" />
+    <ClInclude Include="Includes\Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\KeyLogger.cpp" />
