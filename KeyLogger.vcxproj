@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="Includes\Base64Encoder.h" />
     <ClInclude Include="Includes\Constants.h" />
+    <ClInclude Include="Includes\Input_Output.h" />
     <ClInclude Include="Includes\KeyLogger.h" />
   </ItemGroup>
   <ItemGroup>
