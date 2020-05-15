@@ -38,6 +38,9 @@
     <ClInclude Include="Includes\Mailer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Includes\KeyBoardHook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource\Mail_Send_Script.ps1">

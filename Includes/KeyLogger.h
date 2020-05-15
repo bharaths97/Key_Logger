@@ -46,7 +46,7 @@ namespace KeyLogger
 		string GetDateString() const
 		{
 			return	string(day < 10 ? "0" : "") + ToString(day) +
-					string(month < 10 ? "/0" : "/") + ToString(month) + "/" +
+					string(month < 10 ? ".0" : ".") + ToString(month) + "." +
 					ToString(year);
 		}
 

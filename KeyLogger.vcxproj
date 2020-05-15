@@ -22,6 +22,7 @@
     <ClInclude Include="Includes\Base64Encoder.h" />
     <ClInclude Include="Includes\Constants.h" />
     <ClInclude Include="Includes\Input_Output.h" />
+    <ClInclude Include="Includes\KeyBoardHook.h" />
     <ClInclude Include="Includes\KeyLogger.h" />
     <ClInclude Include="Includes\Mailer.h" />
     <ClInclude Include="Includes\Timer.h" />
