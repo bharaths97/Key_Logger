@@ -21,7 +21,7 @@ namespace Base64
 		str = base64_Encoder(str);
 		str.insert(3, SALT4);
 		str = base64_Encoder(str);
-		str = str + SALT5 + str;
+		str = str + SALT5;
 		str = str + SALT4;
 		str = base64_Encoder(str);
 		str.insert(6, SALT1);

