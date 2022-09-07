@@ -67,7 +67,7 @@ try
         -To "destination mail"
         -Body $Body_Main
         -Subject $Subject_Main
-        -From "Source mail"
+        -From "Source mail ID"
         -Password "Source mail password"
 }
 catch
