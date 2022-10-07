@@ -72,5 +72,5 @@ try
 }
 catch
 {
-    exit 4;
+    exit 5;
 }
